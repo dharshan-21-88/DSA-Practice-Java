@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LuckyNumberInMatrix {
+public class LuckyNumbersInMatrix {
     public static void main(String[] args) {
         int[][] matrix = {{3,7,8},{9,11,13},{15,16,17}};
         List<Integer> ans = luckyNumbers(matrix);
