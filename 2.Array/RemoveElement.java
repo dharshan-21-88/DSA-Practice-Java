@@ -8,16 +8,13 @@ public class RemoveElement {
 
     static int removeElement(int[] nums, int val) {
         int index = 0;
-        int count = 0;
+        
         for(int i =0;i<nums.length;i++){
             if(nums[i] != val){
-                int temp = nums[i];
-                nums[i] = nums[index];
-                nums[index] = temp;
+                nums[index] = nums[i];
                 index++;
-                count++;
             }
         }
-        return count;
+        return index;
     }
 }
