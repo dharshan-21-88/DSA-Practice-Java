@@ -11,13 +11,13 @@ public class MyPower {
         }
 
         if(n >= 0){
-            return powerCalc1(x, n);
+            return powerCalc(x, n);
         }
 
         else{
             x = 1/x;
             n *= -1;
-            return powerCalc1(x, n);
+            return powerCalc(x, n);
         }
     }
 
@@ -38,7 +38,7 @@ public class MyPower {
                 }
                 
                 power = power * x;
-                n >>= 2;
+                n /= 2;
             }
         return power;
     }
