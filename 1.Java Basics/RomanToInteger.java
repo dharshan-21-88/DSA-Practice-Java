@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/roman-to-integer/description/
 public class RomanToInteger {
     public static void main(String[] args) {
         String s = "MCMXCIV";
@@ -7,42 +8,32 @@ public class RomanToInteger {
     static int romanToInt(String s) {
         int num = 0;
         for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+            
+            int current = inValue(s.charAt(i));
+            if(i == s.length()-1){
+                num+=current;
+            }
+            else{
+                int next = inValue(s.charAt(i+1));
 
-            if (i < s.length() - 1 && ch == 'I' && s.charAt(i + 1) == 'V') {
-                num += 4;
-                i++;
-            } else if (i < s.length() - 1 && ch == 'I' && s.charAt(i + 1) == 'X') {
-                num += 9;
-                i++;
-            } else if (i < s.length() - 1 && ch == 'X' && s.charAt(i + 1) == 'L') {
-                num += 40;
-                i++;
-            } else if (i < s.length() - 1 && ch == 'X' && s.charAt(i + 1) == 'C') {
-                num += 90;
-                i++;
-            } else if (i < s.length() - 1 && ch == 'C' && s.charAt(i + 1) == 'D') {
-                num += 400;
-                i++;
-            } else if (i < s.length() - 1 && ch == 'C' && s.charAt(i + 1) == 'M') {
-                num += 900;
-                i++;
-            } else if (ch == 'I') {
-                num += 1;
-            } else if (ch == 'V') {
-                num += 5;
-            } else if (ch == 'X') {
-                num += 10;
-            } else if (ch == 'L') {
-                num += 50;
-            } else if (ch == 'C') {
-                num += 100;
-            } else if (ch == 'D') {
-                num += 500;
-            } else if (ch == 'M') {
-                num += 1000;
+                if(current < next){
+                    num-=current;
+                }
+                else{
+                    num+=current;
+                }
             }
         }
         return num;
+    }
+
+    static int inValue(char ch){
+        if(ch == 'I') return 1;
+        if (ch == 'V') return 5;
+        if (ch == 'X') return 10;
+        if (ch == 'L') return 50;
+        if (ch == 'C') return 100;
+        if (ch == 'D') return 500;
+        return 1000;
     }
 }
