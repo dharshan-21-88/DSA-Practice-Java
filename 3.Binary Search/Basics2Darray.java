@@ -2,17 +2,17 @@ import java.util.Arrays;
 
 public class Basics2Darray {
     public static void main(String[] args) {
-        int[][] matrix = {  {10,20,30,40},
+        int[][] matrix = {  {10,20,30,40},            // Col wise & row wise sorted
                             {15,25,35,45},
                             {28,29,37,49},
                             {33,34,38,50}
                         };
         int target = 37;
-        int[] ans = search(matrix, target);
-        System.out.println(Arrays.toString(ans));
+
+        System.out.println(Arrays.toString(search(matrix, target)));
     }
 
-    static int[] search(int[][] matrix ,int target){
+    static int[] search(int[][] matrix ,int target){  // When the matrix is col wise & row wise sorted
         int r = 0;
         int c = matrix[0].length-1;
 
