@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Basics2Darray {
     public static void main(String[] args) {
-        int[][] matrix = {  {10,20,30,40},            // Col wise & row wise sorted
+        int[][] matrix = {  {10,20,30,40},            // Col wise & row wise sorted.
                             {15,25,35,45},
                             {28,29,37,49},
                             {33,34,38,50}
