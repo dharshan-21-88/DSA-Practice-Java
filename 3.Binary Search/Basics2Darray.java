@@ -16,7 +16,7 @@ public class Basics2Darray {
         int r = 0;
         int c = matrix[0].length-1;
 
-        while(r <= matrix.length && c > 0){
+        while(r < matrix.length && c >= 0){
             if(matrix[r][c] == target){
                 return new int[]{r,c};
             }
