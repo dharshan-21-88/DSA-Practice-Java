@@ -11,11 +11,7 @@ public class MissingNumber {
         while(i < nums.length){
             int correct = nums[i];
 
-            if(correct == nums.length){
-                i++;
-            }
-
-            else if(nums[i] != nums[correct]){
+            if(correct < nums.length && nums[i] != nums[correct]){
                 swap(nums, i, correct);
             }
 
